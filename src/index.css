@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .slider-track {
+      @apply animate-scroll; /* Apply continuous scroll animation */
+      width: calc(200% + 2rem); /* Ensures enough width for seamless looping */
+    }
+    .slider-item {
+      @apply bg-gradient-to-tr from-cyan-400 to-lime-400 rounded-3xl p-4 flex items-center justify-center w-[150px] h-[5rem] sm:h-[150px];
+    }
+  }
+  
+  /* Custom continuous scroll animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Attach the animation to the class with a slow duration */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+
+  
+  
